@@ -71,9 +71,9 @@ const ModalCart = () => {
           <div className="text-2xl font-medium">Total</div>
           <div className="text-2xl font-bold">{total}mdl</div>
         </div>
-        <div className="bg-[#ff0000] w-11/12 h-[48px] m-auto rounded-md flex justify-between content-center mt-5">
-          <Link to={`/${i18n.language}/cart`} className="text-white font-bold text-xl m-auto">ORDER</Link>
-        </div>
+        <Link to={`/${i18n.language}/cart`} className="bg-[#ff0000] w-11/12 h-[48px] m-auto rounded-md flex justify-between content-center mt-5">
+          <div className="text-white font-bold text-xl m-auto">ORDER</div>
+        </Link>
       </div>
     </div>
   );
