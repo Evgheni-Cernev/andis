@@ -65,7 +65,7 @@ const Slider = () => {
     <div ref={sliderRef} className="keen-slider relative h-full">
       {sliderTopData.map((item, key) => (
         <img
-          key={id + key}
+          key={item.imgUrl}
           src={item.imgUrl}
           alt="slider"
           className="keen-slider__slide object-cover h-full"

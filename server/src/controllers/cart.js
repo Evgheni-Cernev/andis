@@ -3,6 +3,8 @@ const Cart = require("../models/cart.schema");
 exports.add = async (req, res) => {
   const { productId, quantity } = req.body;
 
+  console.warn("add", productId, quantity)
+
   const cart = await Cart.findOne({ user: req.userId });
 
   if (cart) {
@@ -34,6 +36,7 @@ exports.add = async (req, res) => {
 };
 
 exports.getProducts = async (req, res) => {
+  console.warn("get", req.userId)
   const cart = await Cart.findOne({ user: req.userId }).populate(
     "items.product"
   );

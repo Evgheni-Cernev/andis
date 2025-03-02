@@ -12,7 +12,7 @@ export class ApiService {
   get(url, params = {}, headers = {}) {
     const searchParams = new URLSearchParams(params);
 
-    return fetch(`${this.baseUrl}${url}?${searchParams}`, {
+    return fetch(`${this.baseUrl}${url}${params ? `?${searchParams}` : ''}`, {
       method: "GET",
       headers: { ...this.headers, ...headers },
     }).then((response) => response.json());

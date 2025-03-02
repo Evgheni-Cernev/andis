@@ -9,7 +9,9 @@ import { useSelector } from "react-redux";
 
 function Product(props) {
   const { id, name, price, src, _id } = props;
-
+ const cart = useSelector((state) => state.cart);
+  const currentEl = cart.find(el => el.product._id === _id)
+  const productQuantity = currentEl ? currentEl?.quantity : null
   const dispatch = useDispatch();
   const location = useLocation();
   const navigate = useNavigate();
@@ -23,7 +25,7 @@ function Product(props) {
       return;
     }
 
-    dispatch(addCartProduct(_id));
+    dispatch(addCartProduct(_id, productQuantity ? productQuantity + 1 : 1));
   };
 
   return (
@@ -68,6 +70,7 @@ function Product(props) {
             {t("Order")}
           </div>
           <ShoppingCartIcon className="h-6 w-6 text-white group-hover:text-black" />
+          <span className="text-white ml-1">{productQuantity ? `(${productQuantity})` : null}</span>
         </div>
       </button>
     </div>

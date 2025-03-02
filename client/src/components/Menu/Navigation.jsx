@@ -17,7 +17,7 @@ const Navigation = () => {
         if (item.items.length) {
           return (
             <Popover
-              key={key}
+              key={item._id}
               contentWidth={600}
               chevronPosition={{ left: 64 }}
               content={<Submenu items={item.items} />}

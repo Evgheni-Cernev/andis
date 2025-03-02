@@ -4,7 +4,7 @@ import api from "../../services/api";
 export const getCartData = async (dispatch) => {
   try {
     const token = localStorage.getItem("accessToken");
-    const data = await api.get("/cart", {}, { "x-access-token": token });
+    const data = await api.get("/cart", null, { "x-access-token": token });
 
     dispatch({ type: SET_CART_DATA, payload: [...data] });
   } catch {

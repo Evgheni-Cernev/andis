@@ -34,18 +34,14 @@ const ModalPreviewProduct = () => {
   return ReactDom.createPortal(
     <>
       <div
-        className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-black bg-opacity-80"
+        className="fixed top-0 left-0 right-0 bottom-0 z-40 bg-black bg-opacity-90"
         onClick={onClose}
       />
 
       <div className="fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 z-50">
         <PreviewProduct
           key={previewProductData.key}
-          imgLarge={previewProductData.imgLarge}
-          name={previewProductData.name}
-          description={previewProductData.description}
-          quantity={previewProductData.quantity}
-          price={previewProductData.price}
+          {...previewProductData}
           onClose={onClose}
         />
       </div>
