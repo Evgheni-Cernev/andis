@@ -20,7 +20,7 @@ function listen() {
   console.log("Server started on port " + 3333);
 }
 
-const mongoDB = `mongodb+srv://evgheni-cernev:01axzqKKgZQv3KlA@cluster0.vfrki.mongodb.net/?retryWrites=true&w=majority`;
+const mongoDB = process.env.MONGO_URI || "mongodb://mongo:27017/mydatabase";
 
 mongoose.connect(mongoDB, { retryWrites: true, w: "majority" });
 

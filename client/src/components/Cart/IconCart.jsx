@@ -19,7 +19,6 @@ const IconCart = () => {
       chevronPosition={{ left: 150 }}
       content={<div>{cart.length ? <ModalCart /> : <EmptyCartModal />}</div>}
     >
-      <div className="relative mb-3">
         <Link to={`/${i18next.language}/cart`}>
           <ShoppingCartIcon className="h-8 w-8 text-white ml-10" />
 
@@ -29,7 +28,6 @@ const IconCart = () => {
             </div>
           )}
         </Link>
-      </div>
     </Popover>
   );
 };

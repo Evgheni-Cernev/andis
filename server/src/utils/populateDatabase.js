@@ -11,6 +11,7 @@ const FooterData = require("../models/footer.schema");
 const newsData = require("../models/news.schema");
 const roleData = require("../models/role.schema");
 const Cart = require("../models/cart.schema");
+const Contact = require("../models/contact.schema");
 
 const populateDatabse = async () => {
   await Partner.remove();
@@ -18,6 +19,13 @@ const populateDatabse = async () => {
   if ((await Partner.estimatedDocumentCount()) === 0) {
     await Partner.create(defaultData.partners);
     console.log(`Partners: +${defaultData.partners.length} documents`);
+  }
+
+  await Contact.remove();
+  // Populate Contact collection
+  if ((await Contact.estimatedDocumentCount()) === 0) {
+    await Contact.create(defaultData.phoneNumbers);
+    console.log(`Contact: +${defaultData.phoneNumbers.length} documents`);
   }
 
   await SubNavData.remove();

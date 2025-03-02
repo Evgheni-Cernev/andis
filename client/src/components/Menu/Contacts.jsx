@@ -11,7 +11,7 @@ const Contacts = () => {
       contentWidth={290}
       chevronPosition={{ left: 206 }}
       content={
-        <div>
+        <div className="p-4">
           {phoneNumbers.map((item) => (
             <PhoneNumberRestaurant
               key={item._id}
